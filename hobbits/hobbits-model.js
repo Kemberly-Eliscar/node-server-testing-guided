@@ -30,5 +30,7 @@ function getAll() {
 }
 
 function findById(id) {
-  return null
+  return db("hobbits")
+  .where("id", id)
+  .first()
 }

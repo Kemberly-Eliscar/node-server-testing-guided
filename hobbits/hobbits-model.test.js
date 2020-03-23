@@ -1,6 +1,10 @@
+const db = require("./data/config")
 // import hobbits model
-
 const hobbitsModel = require("./hobbits-model")
+
+beforeEach(async () => {
+    await db.seed.run()
+})
 
 test("insert", async () => {
     const res = await hobbitsModel.insert({ name: "bilbo"})

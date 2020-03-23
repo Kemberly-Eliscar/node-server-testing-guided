@@ -1,7 +1,7 @@
 {
 	"private": true,
 	"scripts": {
-		"test": "jest --verbose",
+		"test": "cross-env NODE_ENV=test jest --verbose",
 		"server": "nodemon -r dotenv/config index.js",
 		"start": "node index.js"
 	},

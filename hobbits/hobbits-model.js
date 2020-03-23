@@ -14,15 +14,16 @@ async function insert(hobbit) {
 
   //we're getting the new id from the inserted row and then we are 
   // looking up that row and finding that id and returning that.
-  return db("hobbits").where("id", id).first()
+  return findById(id)
 }
 
 async function update(id, changes) {
-  return null
+  await db("hobbits").update(changes).where("id", id)
+  return findById(id)
 }
 
 function remove(id) {
-  return null
+  return db("hobbits").where("id", id).del()
 }
 
 function getAll() {

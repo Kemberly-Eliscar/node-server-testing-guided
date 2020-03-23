@@ -22,6 +22,10 @@ server.use((err, req, res, next) => {
 	})
 })
 
+// if this file is imported into another file, don't actually start the server
+if (!module.parent) {
 server.listen(port, () => {
 	console.log(`Running at http://localhost:${port}`)
 })
+}
+module.exports = server

@@ -9,7 +9,7 @@ module.exports = {
 }
 
 async function insert(hobbit) {
-  return db("hobbits").insert(hobbit) // .insert returns an array of ID's
+  const [id] = await db("hobbits").insert(hobbit) // .insert returns an array of ID's
   // we can get a specific id by saying:
 
   //we're getting the new id from the inserted row and then we are 

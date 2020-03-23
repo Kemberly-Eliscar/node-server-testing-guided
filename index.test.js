@@ -1,6 +1,12 @@
 const supertest = require("supertest")
 // our server won't actually start due to the if statement in index.js
 const server = require("./index")
+const db = require("./data/config")
+
+beforeEach(async () => {
+    // run our seeds
+    await db.seed.run() // this will re-seed our database
+})
 
 // integration test for our welcome route
 test("welcome route", async() => {

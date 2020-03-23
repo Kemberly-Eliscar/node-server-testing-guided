@@ -9,7 +9,12 @@ module.exports = {
 }
 
 async function insert(hobbit) {
-  return null
+  return db("hobbits").insert(hobbit) // .insert returns an array of ID's
+  // we can get a specific id by saying:
+
+  //we're getting the new id from the inserted row and then we are 
+  // looking up that row and finding that id and returning that.
+  return db("hobbits").where("id", id).first()
 }
 
 async function update(id, changes) {
